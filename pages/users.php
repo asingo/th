@@ -5,7 +5,10 @@ include 'pages/_partials/navbar.php';
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-
+                <?php
+include '../config/dbconn.php';
+$query = mysqli_query($conn,"select * from users");
+?>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
@@ -25,19 +28,24 @@ include 'pages/_partials/navbar.php';
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td style="height: 40px; vertical-align: middle;">1</td>
-            <td style="height: 40px; vertical-align: middle;">Admin</td>
-            <td style="height: 40px; vertical-align: middle;">11</td>
-            <td style="height: 40px; vertical-align: middle;">asd</td>
-            <td style="height: 40px; vertical-align: middle;">233</td>
+        <?php
+          while ($row = mysqli_fetch_array($query)){
+            echo '<tr>
+            <td style="height: 40px; vertical-align: middle;">'.$row['no'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.$row['fname'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.$row['user'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.$row['rule'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.$row['pic'].'</td>
             <td style="height: 40px; width: 180px; vertical-align: middle;">
             <div align="center">
                 <a href="users?edit"><button class="btn btn-primary" type="button" title="Edit" aria-label="Edit"><i class="fa fa-wrench" aria-hidden="true"></i></button></a>
                 <a href="#" data-toggle="modal" data-target="#deleteModal"><button class="btn btn-danger" type="button" title="Delete" aria-label="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
-</div>
+            </div>
             </td>
-          </tr>
+          </tr>';
+        }
+        ?>
+          
         </tbody>
       </table>
       <a href="users?add" ><button class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add User</button></a>

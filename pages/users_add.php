@@ -21,7 +21,7 @@ include 'pages/_partials/navbar.php';
                 <div class="container">
                 <div class="row">
                 <div class="col-lg-7 card-body">
-                <form>
+                <form method="post" enctype="multipart/form-data" action=doAddUser.php>
     <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="jjjj">
@@ -35,8 +35,8 @@ include 'pages/_partials/navbar.php';
     <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Upload Photo</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label>Upload Photo</label>
+    <input type="file" class="form-control" name="gambar">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/users"><button class="btn"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button></a>
