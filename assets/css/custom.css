@@ -6,3 +6,11 @@
     background: #5bb75b;
     border-radius: 12px;
 }
+.unsquare {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3em;
+    color: white;
+    background: #fc2d2d;
+    border-radius: 12px;
+}

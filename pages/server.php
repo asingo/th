@@ -1,6 +1,15 @@
 <?php 
+require_once 'vendor/autoload.php';
 include 'pages/_partials/sidebar.php';
 include 'pages/_partials/navbar.php';
+include 'config/dbconn.php';
+$query = mysqli_query($conn,"select * from routeros where no=1");
+$row = mysqli_fetch_array($query);
+$ip = $row['host'];
+$host = $ip;
+$ping = new \JJG\Ping($host);
+$ping->setTimeout(5);
+$latency = $ping->ping();
 ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -17,15 +26,23 @@ include 'pages/_partials/navbar.php';
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Connected Server</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Connected Server <?php echo $latency;?></h6>
                 </div>
                 <div class="card-body">
                 <h4 style="color: #000000;">Server Hostname / IP</h4>
-                <h5>127.0.0.1</h5>
+                <h5><?php echo $row['host'];?></h5>
                 <h4 style="color: #000000;">Username</h4>
-                <h5>admin</h5>
+                <h5><?php echo $row['user'];?></h5>
                 <h4 style="color: #000000;">Status</h4>
-                <h5 class="square">Connected</h5>
+                <?php
+                if ($latency !== false) {
+                    echo "<h5 class='square'>Connected</h5>";
+                 }
+                else {
+                    echo "<h5 class='unsquare'>Disconnected</h5>";
+                }?>
+                
+                
 
                 </div>
               </div>
@@ -43,7 +60,7 @@ include 'pages/_partials/navbar.php';
                   <h6 class="m-0 font-weight-bold text-primary">Change Connected Server</h6>
                 </div>
                 <div class="card-body">
-                  <form action="login/" method="POST" onSubmit="return validasi()" class="user">
+                  <form action="server?editServer" method="POST" class="user">
                     <div class="form-group">
                       <input type="text" name="ip" class="form-control" id="ip" aria-describedby="ip" placeholder="Enter Hostname here">
                     </div>

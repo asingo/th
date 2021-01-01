@@ -22,6 +22,9 @@ elseif(isset($_GET['doEdit'])){
 elseif(isset($_GET['delUser'])){
     require __DIR__ . '/module/doDelUser.php';
 }
+elseif(isset($_GET['editServer'])){
+    require __DIR__ . '/module/doEditServer.php';
+}
 switch ($request) {
     case '/' :
         require __DIR__ . $link;
