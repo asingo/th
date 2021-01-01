@@ -48,10 +48,13 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "delete" below if you are ready to delete selected data.</div>
+        <script>
+
+</script>
+        <div class="modal-body">Select "delete" <script>var del = document.getElementById('deleteUser');var usrid = del.getAttribute('data-userid');document.write(usrid);</script>below if you are ready to delete user ?.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout/">delete</a>
+          <a class="btn btn-primary" href="javascript:;" id="modalDelete">delete</a>
         </div>
       </div>
     </div>
@@ -60,6 +63,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/hapus.js"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="assets/jquery-easing/jquery.easing.min.js"></script>

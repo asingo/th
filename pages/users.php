@@ -12,7 +12,7 @@ $query = mysqli_query($conn,"select * from users");
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Manage User Authorization <?php echo $request;?></h6>
+    <h6 class="m-0 font-weight-bold text-primary">Manage User Authorization</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -38,12 +38,12 @@ $query = mysqli_query($conn,"select * from users");
             <td style="height: 40px; vertical-align: middle;">'.$row['pic'].'</td>
             <td style="height: 40px; width: 180px; vertical-align: middle;">
             <div align="center">
-                <a href="users?edit"><button class="btn btn-primary" type="button" title="Edit" aria-label="Edit"><i class="fa fa-wrench" aria-hidden="true"></i></button></a>
-                <a href="#" data-toggle="modal" data-target="#deleteModal"><button class="btn btn-danger" type="button" title="Delete" aria-label="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                <a href="users?edit='.$row['no'].'"><button class="btn btn-primary" type="button" title="Edit" aria-label="Edit"><i class="fa fa-wrench" aria-hidden="true"></i></button></a>
+                <a href="javascript:;" class="trash" data-id='.$row['no'].' data-toggle="modal" id="deleteUser" data-target="#deleteModal"><button class="btn btn-danger" type="button" title="Delete" aria-label="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
             </div>
             </td>
           </tr>';
-        }
+          }
         ?>
           
         </tbody>

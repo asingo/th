@@ -13,7 +13,15 @@ if (isset($_GET['edit'])){
 elseif(isset($_GET['add'])){
     require __DIR__ . '/pages/users_add.php';
 }
-
+elseif(isset($_GET['doAdd'])){
+    require __DIR__ . '/module/doAddUser.php';
+}
+elseif(isset($_GET['doEdit'])){
+    require __DIR__ . '/module/doEditUser.php';
+}
+elseif(isset($_GET['delUser'])){
+    require __DIR__ . '/module/doDelUser.php';
+}
 switch ($request) {
     case '/' :
         require __DIR__ . $link;

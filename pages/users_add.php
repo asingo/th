@@ -4,7 +4,17 @@ include 'pages/_partials/navbar.php';
 ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+<script> 
+function previewImage() {
+    document.getElementById("image-preview").style.display = "block";
+    var oFReader = new FileReader();
+     oFReader.readAsDataURL(document.getElementById("image-source").files[0]);
+ 
+    oFReader.onload = function(oFREvent) {
+      document.getElementById("image-preview").src = oFREvent.target.result;
+    };
+  };
+</script>
         
 
           <!-- Content Row -->
@@ -21,22 +31,30 @@ include 'pages/_partials/navbar.php';
                 <div class="container">
                 <div class="row">
                 <div class="col-lg-7 card-body">
-                <form method="post" enctype="multipart/form-data" action=doAddUser.php>
+                <form method="post" enctype="multipart/form-data" action="?doAdd">
     <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="jjjj">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control" id="username">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Fullname</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="fullname">Fullname</label>
+    <input type="text" class="form-control" id="fullname" name="fullname">
+  </div>
+  <div class="form-group">
+    <label for="rule">Rule</label>
+    <select class="form-control" id="rule" name="rule">
+      <option>--Select Rule--</option>
+      <option value="Administrator">Administrator</option>
+      <option value="Billing">Billing</option>
+    </select>
   </div>
   <div class="form-group">
     <label>Upload Photo</label>
-    <input type="file" class="form-control" name="gambar">
+    <input id="image-source" onChange="previewImage();" type="file" class="form-control" name="gambar">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/users"><button class="btn"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button></a>
@@ -45,6 +63,8 @@ include 'pages/_partials/navbar.php';
                 </div>
                 <div class="col-lg-4 card-body">
                 Foto Profil
+                <br>
+                <img src="https://img2.pngio.com/person-vector-png-full-body-person-icon-clip-art-library-people-vector-png-920_1415.png"  id="image-preview" style="padding-left: 25px; padding-top: 10px; width: 50%; height: auto;">
                 </div>
                 </div>
                 </div>
