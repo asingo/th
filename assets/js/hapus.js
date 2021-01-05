@@ -10,7 +10,7 @@ $(document).ready(function(){
     if(title == "user"){
         modal.find('#modalDelete').attr("href","?delUser="+id);
         }else if(title == "client"){
-        modal.find('#modalDelete').attr("href","/?doclient="+id);
+        modal.find('#modalDelete').attr("href","?delClient="+id);
        }
         
     // Mengisi atribut href pada tombol ya yang kita berikan id hapus-true pada modal .
