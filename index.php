@@ -22,8 +22,17 @@ elseif(isset($_GET['doEdit'])){
 elseif(isset($_GET['delUser'])){
     require __DIR__ . '/module/doDelUser.php';
 }
+elseif(isset($_GET['delClient'])){
+    require __DIR__ . '/module/doDelClient.php';
+}
 elseif(isset($_GET['editServer'])){
     require __DIR__ . '/module/doEditServer.php';
+}
+elseif(isset($_GET['addclient'])){
+    require __DIR__ . '/pages/client_add.php';
+}
+elseif(isset($_GET['doaddclient'])){
+    require __DIR__ . '/module/doAddClient.php';
 }
 switch ($request) {
     case '/' :
@@ -59,6 +68,9 @@ switch ($request) {
     case '/client/drop' :
         require __DIR__ . '/pages/drop.php';
         break;
+    case '/client/manage' :
+        require __DIR__ . '/pages/manage.php';
+        break;
     case '/client/billing' :
         require __DIR__ . '/pages/billing.php';
         break;        
@@ -68,9 +80,9 @@ switch ($request) {
     case '/report' :
         require __DIR__ . '/pages/report.php';
         break;
-     default:
-        http_response_code(404);
-         require __DIR__ . '/pages/404.php';
-         break; 
+    //  default:
+    //     http_response_code(404);
+    //      require __DIR__ . '/pages/404.php';
+    //      break; 
 }
 ?>

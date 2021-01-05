@@ -1,5 +1,6 @@
 {
     "require": {
-        "geerlingguy/ping": "^1.2"
+        "geerlingguy/ping": "^1.2",
+        "evilfreelancer/routeros-api-php": "^1.3"
     }
 }

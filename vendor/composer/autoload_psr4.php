@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpseclib\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'RouterOS\\' => array($vendorDir . '/evilfreelancer/routeros-api-php/src'),
+    'DivineOmega\\SSHConnection\\' => array($vendorDir . '/divineomega/php-ssh-connection/src'),
 );

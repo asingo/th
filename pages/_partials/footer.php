@@ -48,35 +48,33 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <script>
-
-</script>
-        <div class="modal-body">Select "delete" <script>var del = document.getElementById('deleteUser');var usrid = del.getAttribute('data-userid');document.write(usrid);</script>below if you are ready to delete user ?.</div>
+        <div class="modal-body">Select "Delete" below if you are ready to delete item.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="javascript:;" id="modalDelete">delete</a>
+          <a class="btn btn-primary" href="javascript:;" id="modalDelete">Delete</a>
         </div>
       </div>
     </div>
   </div>
 
+
   <!-- Bootstrap core JavaScript-->
-  <script src="assets/jquery/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/hapus.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/jquery/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="http://cdn.th.xyz/gh/th/assets/js/hapus.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="assets/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="assets/js/sb-admin-2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="assets/chart.js/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="assets/js/demo/chart-area-demo.js"></script>
-  <script src="assets/js/demo/chart-pie-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/demo/chart-area-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/demo/chart-pie-demo.js"></script>
 
   <script nomodule defer src="node_modules/src/js.cookie.js"></script>
 

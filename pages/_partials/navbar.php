@@ -25,10 +25,13 @@
                 case '/server' :
                     echo 'Server';
                     break;
+                case '/client/manage' && '/client/manage?addclient' && '/client/manage?detailclient':
+                    echo 'Client Management';
+                    break;
                 case '/users' && '/users?add' && '/users?edit' :
                     echo 'User Management';
                     break;
-                  }
+                }
             ?>
             </h3>
           </div> 

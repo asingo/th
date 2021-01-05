@@ -13,13 +13,13 @@
   <title>Cosmicwave Monitoring</title>
 
   <!-- Custom fonts for this template-->
-  <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="assets/fontawesome-free/css/fontawesome.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/fontawesome-free/css/fontawesome.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/css/custom.css" rel="stylesheet">
 
 </head>
 
@@ -33,7 +33,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-      <div class="sidebar-brand-text mx-3"><img src="assets/img/logocw.png"></div>       
+      <div class="sidebar-brand-text mx-3"><img src="https://cdn.jsdelivr.net/gh/asingo/th/assets/img/logocw.png"></div>       
         <!-- <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>--><!-- 
@@ -67,8 +67,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Select Graph</h6>
-            <a class="collapse-item" href="graph/interface">Interface</a>
-            <a class="collapse-item" href="graph/client">Client/IP Address</a>
+            <a class="collapse-item" href="/graph/interface">Interface</a>
+            <a class="collapse-item" href="/graph/client">Client/IP Address</a>
           </div>
         </div>
       </li>
@@ -93,8 +93,9 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Select Options</h6>
-            <a class="collapse-item" href="client/drop">Drop Client</a>
-            <a class="collapse-item" href="client/billing">Billing Manage</a>
+            <a class="collapse-item" href="/client/manage">Manage Client</a>
+            <a class="collapse-item" href="/client/drop">Drop Client</a>
+            <a class="collapse-item" href="/client/billing">Billing Manage</a>
           </div>
         </div>
       </li>
@@ -111,14 +112,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="server">
+        <a class="nav-link" href="/server">
           <i class="fas fa-fw fa-server"></i>
           <span>Server</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="users">
+        <a class="nav-link" href="/users">
           <i class="fas fa-fw fa-user"></i>
           <span>Users</span></a>
       </li>
