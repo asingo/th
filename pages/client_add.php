@@ -55,6 +55,16 @@ function selectPM() {
                 <div class="container">
                 <div class="row">
                 <div class="col-lg-7 card-body">
+                <script type="text/javascript">
+                
+ $(function(){
+  $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+  });
+ });
+</script>
   <form method="post" enctype="multipart/form-data" action="?doaddclient">
     <div class="form-group">
     <label for="username">Client Name</label>
@@ -67,6 +77,20 @@ function selectPM() {
   <div class="form-group">
     <label for="phone">Phone</label>
     <input type="text" class="form-control" id="phone" name="phone">
+  </div>
+  <div class="form-group">
+    <label for="paket">Package</label>
+    <input type="text" class="form-control" id="paket" name="paket">
+    <div class="d-inline"><small>Ketik jenis langganan. Mis: "2mbps personal / 4mbps soho"</small></div>
+  </div>
+  <div class="form-group date">
+    <label for="date">Installation Date</label>
+    <div class="input-group">
+      <input placeholder="masukkan tanggal Awal" type="text" class="form-control datepicker" name="tgl_awal">
+      <div class="input-group-append">
+        <i class="btn btn-primary fa fa-calendar"></i>
+      <div>
+    </div>
   </div>
   <div class="form-group">
     <label for="rule">Packet Mark</label>

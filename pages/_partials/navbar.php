@@ -18,6 +18,13 @@
           <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100">
             <h3>
             <?php 
+            
+              $id = '0';
+              if(isset($_GET['detail']) != '0'){
+                $id = $_GET['detail'];
+              } else if(isset($_GET['bill']) != '0'){
+                $id = $_GET['bill'];
+              }
               switch ($request) {
                 case '/' :
                     echo 'Dashboard';
@@ -25,10 +32,31 @@
                 case '/server' :
                     echo 'Server';
                     break;
-                case '/client/manage' && '/client/manage?addclient' && '/client/manage?detailclient':
+                case '/client/manage':
                     echo 'Client Management';
                     break;
-                case '/users' && '/users?add' && '/users?edit' :
+                case '/client/manage?addclient':
+                    echo 'Client Management';
+                    break;
+                case '/client/manage?detail='.$id:
+                    echo 'Client Management';
+                    break;
+                case '/client/drop':
+                    echo 'Client Access Control';
+                    break;
+                case '/client/billing':
+                    echo 'Billing Management';
+                    break;
+                case '/client/billing?bill='.$id:
+                    echo 'Billing Management';
+                    break;
+                case '/users':
+                    echo 'User Management';
+                    break;
+                case '/users?add':
+                    echo 'User Management';
+                    break;
+                case '/users?edit':
                     echo 'User Management';
                     break;
                 }

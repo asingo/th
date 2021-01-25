@@ -1,6 +1,6 @@
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Indra Hari Setiawan - 2020</span>
@@ -59,7 +59,9 @@
 
 
   <!-- Bootstrap core JavaScript-->
+  
   <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/jquery/jquery.min.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="http://cdn.th.xyz/gh/th/assets/js/hapus.js"></script>
 
@@ -70,13 +72,10 @@
   <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/chart.js/Chart.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/gh/uxsolutions/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
   <!-- Page level custom scripts -->
-  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/demo/chart-area-demo.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/asingo/th/assets/js/demo/chart-pie-demo.js"></script>
 
-  <script nomodule defer src="node_modules/src/js.cookie.js"></script>
 
 </body>
 

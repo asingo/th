@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script src="node_modules/js-cookie/src/js.cookie.js"></script>
   <title>Cosmicwave Monitoring</title>
-
+  
   <!-- Custom fonts for this template-->
   <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/fontawesome-free/css/fontawesome.css" rel="stylesheet" type="text/css">
@@ -20,7 +20,9 @@
   <!-- Custom styles for this template-->
   <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/css/custom.css" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  
 </head>
 
 <body id="page-top">
