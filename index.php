@@ -34,6 +34,27 @@ elseif(isset($_GET['addclient'])){
 elseif(isset($_GET['doaddclient'])){
     require __DIR__ . '/module/doAddClient.php';
 }
+elseif(isset($_GET['doupdateclient'])){
+    require __DIR__ . '/module/doUpdateClient.php';
+}
+elseif(isset($_GET['doupdatebill'])){
+    require __DIR__ . '/module/doUpdateBill.php';
+}
+elseif(isset($_GET['disable'])){
+    require __DIR__ . '/module/doDisClient.php';
+}
+elseif(isset($_GET['enable'])){
+    require __DIR__ . '/module/doEnClient.php';
+}
+elseif (isset($_GET['bill'])) {
+    require __DIR__ . '/pages/detail_billing.php';
+}
+elseif (isset($_GET['pay'])) {
+    require __DIR__ . '/module/doPay.php';
+}
+elseif (isset($_GET['detail'])) {
+    require __DIR__ . '/pages/detail_client.php';
+}
 switch ($request) {
     case '/' :
         require __DIR__ . $link;
