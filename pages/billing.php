@@ -37,7 +37,7 @@ $query = mysqli_query($conn,"select * from client inner join client_billing on c
             <td style="height: 40px; vertical-align: middle;">'.$row['payment_due'].'</td>
             <td style="height: 40px; vertical-align: middle;">'.$row['billing_date'].'</td>
             <td style="height: 40px; vertical-align: middle;">'.$row['payment_done'].'</td>
-            <td style="height: 40px; vertical-align: middle;">'.$row['price'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.'Rp. '.number_format($row['price'],2,',','.').'</td>
             <td style="height: 40px; width: 180px; vertical-align: middle;">
             <div align="center" data-button-type="client">
                 <a href="billing?bill='.$row['id'].'"><button class="btn btn-primary" type="button" title="Detail" placeholder="Detail" aria-label="Detail"><i class="fa fa-bars" aria-hidden="true"></i></button></a>

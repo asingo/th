@@ -30,8 +30,21 @@ function previewImage() {
                 </div>
                 <div class="container">
                 <div class="row">
+                <script>
+                      function validateForm() {
+    var a = document.forms["Form"]["username"].value;
+    var b = document.forms["Form"]["password"].value;
+    var c = document.forms["Form"]["fullname"].value;
+    var d = document.forms["Form"]["rule"].value;
+    var e = document.forms["Form"]["gambar"].value;
+    if (a == null || a == "", b == null || b == "", c == null || c == "", d == null || d == "", e == null || e == "") {
+      alert("Masukkan Data Pengguna!");
+      return false;
+    };
+  };
+                </script>
                 <div class="col-lg-7 card-body">
-                <form method="post" enctype="multipart/form-data" action="?doAdd">
+                <form method="post" name="Form" onsubmit="return validateForm()" enctype="multipart/form-data" action="?doAdd">
     <div class="form-group">
     <label for="username">Username</label>
     <input type="text" name="username" class="form-control" id="username">

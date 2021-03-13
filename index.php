@@ -40,6 +40,9 @@ elseif(isset($_GET['doupdateclient'])){
 elseif(isset($_GET['doupdatebill'])){
     require __DIR__ . '/module/doUpdateBill.php';
 }
+elseif(isset($_GET['doupdategraph'])){
+    require __DIR__ . '/module/doUpdateGraph.php';
+}
 elseif(isset($_GET['disable'])){
     require __DIR__ . '/module/doDisClient.php';
 }
@@ -55,6 +58,15 @@ elseif (isset($_GET['pay'])) {
 elseif (isset($_GET['detail'])) {
     require __DIR__ . '/pages/detail_client.php';
 }
+elseif (isset($_GET['detailGraph'])) {
+    require __DIR__ . '/pages/graph_detail.php';
+}
+elseif (isset($_GET['showGraph'])) {
+    require __DIR__ . '/pages/graph_show.php';
+}
+elseif (isset($_GET['doPrint'])) {
+    require __DIR__ . '/module/doPrint.php';
+}
 switch ($request) {
     case '/' :
         require __DIR__ . $link;
@@ -62,7 +74,7 @@ switch ($request) {
     case '/login/' :
         require __DIR__ . '/module/doLogin.php';
         break;
-    case '/logout/' :
+    case '/logout' :
         require __DIR__ . '/module/doLogout.php';
         break;
     case '/server' :
@@ -86,6 +98,9 @@ switch ($request) {
     case '/graph/client' :
         require __DIR__ . '/pages/graph_client.php';
         break;
+        case '/graph/console' :
+            require __DIR__ . '/pages/graph_console.php';
+            break;
     case '/client/drop' :
         require __DIR__ . '/pages/drop.php';
         break;

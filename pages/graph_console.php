@@ -12,15 +12,16 @@
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Manage Client </h6>
   </div>
-  <div class="card-body" id="tablePrint">
-    <div class="table-responsive" >
+  <div class="card-body">
+    <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>No</th>
             <th>Name</th>
+            <th>Graph ID</th>
             <th>IP</th>
-            <th>Show Graph</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -33,10 +34,11 @@
             echo '<tr>
             <td style="height: 40px; vertical-align: middle;">'.$r['id'].'</td>
             <td style="height: 40px; vertical-align: middle;">'.$r['name'].'</td>
+            <td style="height: 40px; vertical-align: middle;">'.$r['graph_id'].'</td>
             <td style="height: 40px; vertical-align: middle;">'.$r['ip'].'</td>
-            <td style="height: 40px; width: auto; vertical-align: middle;">
-            <div align="center">
-            <a href="client?showGraph='.$r['id'].'&rra_id=5"><button class="btn btn-primary" type="button" title="Edit" aria-label="Edit"><i class="fa fa-bars" aria-hidden="true"></i> Show Graph</button></a>
+            <td style="height: 40px; width: 180px; vertical-align: middle;">
+            <div align="center" data-button-type="client">
+            <a href="console?detailGraph='.$r['id'].'"><button class="btn btn-primary" type="button" title="Edit" aria-label="Edit"><i class="fa fa-bars" aria-hidden="true"></i> Detail</button></a>
             </div>
             </td>
           </tr>';

@@ -1,7 +1,39 @@
 <?php 
 include 'pages/_partials/sidebar.php';
 include 'pages/_partials/navbar.php';
+include 'config/dbconn.php';
+$q = mysqli_query($conn,"select * from client inner join client_status on client.id = client_status.id_client inner join client_queue on client.id = client_queue.id_client");
+$qtrue = mysqli_query($conn,"select * from client inner join client_status on client.id = client_status.id_client inner join client_queue on client.id = client_queue.id_client where client_status.status = 1");
+$qfalse = mysqli_query($conn,"select * from client inner join client_status on client.id = client_status.id_client inner join client_queue on client.id = client_queue.id_client where client_status.status = 0");
+$totbw = mysqli_query($conn,"select sum(client_queue.max_limit) as total from client inner join client_status on client.id = client_status.id_client inner join client_queue on client.id = client_queue.id_client");
+$count = mysqli_num_rows($q);
+$true = mysqli_num_rows($qtrue);
 
+$total = mysqli_fetch_array($totbw);
+if (mysqli_num_rows($qfalse)==0){
+  $false = 0;
+}else if(mysqli_num_rows($qfalse)){
+  $false = mysqli_num_rows($qfalse);
+}
+function singkatangka($n, $presisi=1) {
+	if ($n < 900) {
+		$format_angka = number_format($n, $presisi);
+		$simbol = '';
+	} else if ($n < 900000) {
+		$format_angka = number_format($n / 1000, $presisi);
+		$simbol = 'Kb';
+	} else if ($n < 900000000) {
+		$format_angka = number_format($n / 1000000, $presisi);
+		$simbol = 'Mb';
+	} 
+ 
+	if ( $presisi > 0 ) {
+		$pisah = '.' . str_repeat( '0', $presisi );
+		$format_angka = str_replace( $pisah, '', $format_angka );
+	}
+	
+	return $format_angka . $simbol;
+}
 ?>
         <script>Cookies.set('name','Dashboard',{path:''});</script>
         <!-- Begin Page Content -->
@@ -20,7 +52,7 @@ include 'pages/_partials/navbar.php';
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Client</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">111</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $count;?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-id-card fa-2x text-gray-300"></i>
@@ -37,7 +69,7 @@ include 'pages/_partials/navbar.php';
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Client Up</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $true;?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -56,7 +88,7 @@ include 'pages/_partials/navbar.php';
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Client Down</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $false;?></div>
                         </div>
                         
                       </div>
@@ -76,7 +108,7 @@ include 'pages/_partials/navbar.php';
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Bandwidth</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo singkatangka($total['total']);?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>

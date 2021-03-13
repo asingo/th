@@ -53,14 +53,24 @@ $latency = $ping->ping();
             </div>
 
             <div class="col-lg-4 mb-4">
-
+            <script>
+function validateForm() {
+    var a = document.forms["Form"]["ip"].value;
+    var b = document.forms["Form"]["username"].value;
+    var c = document.forms["Form"]["password"].value;
+    if (a == null || a == "", b == null || b == "", c == null || c == "") {
+      alert("Masukkan Data Server!");
+      return false;
+    }
+  }
+</script>
               <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Change Connected Server</h6>
                 </div>
                 <div class="card-body">
-                  <form action="server?editServer" method="POST" class="user">
+                  <form action="server?editServer" name="Form" onsubmit="return validateForm()" method="POST" class="user">
                     <div class="form-group">
                       <input type="text" name="ip" class="form-control" id="ip" aria-describedby="ip" placeholder="Enter Hostname here">
                     </div>

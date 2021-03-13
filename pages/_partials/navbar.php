@@ -20,11 +20,21 @@
             <?php 
             
               $id = '0';
+              $id_rra = '0';
               if(isset($_GET['detail']) != '0'){
                 $id = $_GET['detail'];
               } else if(isset($_GET['bill']) != '0'){
                 $id = $_GET['bill'];
-              }
+              } else if(isset($_GET['detailGraph']) != '0'){
+                $id = $_GET['detailGraph'];
+              } else if(isset($_GET['edit']) != '0'){
+                $id = $_GET['edit'];
+              } else if(isset($_GET['showGraph']) != '0'){
+                $id = $_GET['showGraph'];
+                if(isset($_GET['rra_id']) != '0'){
+                  $id_rra = $_GET['rra_id'];
+                }
+              } 
               switch ($request) {
                 case '/' :
                     echo 'Dashboard';
@@ -47,16 +57,37 @@
                 case '/client/billing':
                     echo 'Billing Management';
                     break;
+                case '/queue':
+                    echo 'Queue List';
+                    break;
+                case '/report':
+                     echo 'Report';
+                    break;
                 case '/client/billing?bill='.$id:
                     echo 'Billing Management';
+                    break;
+                case '/graph/console?detailGraph='.$id:
+                    echo 'Graphing';
+                    break;
+                case '/graph/console?showGraph='.$id.'&rra_id='.$id_rra:
+                    echo 'Graphing';
                     break;
                 case '/users':
                     echo 'User Management';
                     break;
+                case '/graph/interface':
+                    echo 'Graphing';
+                    break;
+                case '/graph/client':
+                    echo 'Graphing';
+                    break;
+                case '/graph/console':
+                    echo 'Graphing';
+                    break;
                 case '/users?add':
                     echo 'User Management';
                     break;
-                case '/users?edit':
+                case '/users?edit='.$id:
                     echo 'User Management';
                     break;
                 }
@@ -78,23 +109,10 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $r['fname'];?></span>
-                <img class="img-profile rounded-circle" src="http://prakerin.uny.ac.id/public_html/sites/default/files/styles/list_foto/public/Indra%20Hari%20S.JPG?itok=0EZhNNUY">
+                <img class="img-profile rounded-circle" src="/assets/profile/<?php echo $r['pic'];?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout

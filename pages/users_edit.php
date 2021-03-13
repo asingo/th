@@ -1,14 +1,22 @@
 <?php 
 include 'pages/_partials/sidebar.php';
 include 'pages/_partials/navbar.php';
-include '../config/dbconn.php';
+include 'config/dbconn.php';
 $userget = $_GET['edit'];
 $query = mysqli_query($conn,"select * from users where no='$userget'");
 $row = mysqli_fetch_array($query);
 ?>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+        <script>
+                      function validateForm() {
+    var a = document.forms["Form"]["password"].value;
+    if (a == null || a == "") {
+      alert("Masukkan Password baru anda!");
+      return false;
+    };
+  };
+                </script>
     
           <!-- Content Row -->
           <div class="row">
@@ -24,11 +32,11 @@ $row = mysqli_fetch_array($query);
                 <div class="container">
                 <div class="row">
                 <div class="col-lg-7 card-body">
-          <form method="post" enctype="multipart/form-data" action="?doEdit">
+          <form method="post" name="Form" onsubmit="return validateForm()" enctype="multipart/form-data" action="?doEdit">
     <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
     <input type="hidden" class="form-control" id="no" name="no" placeholder="<?php echo $row['user'];?>">
-    <input type="text" class="form-control" id="username" name="username" placeholder="<?php echo $row['user'];?>">
+    <input type="text" class="form-control" id="username" name="username" value="<?php echo $row['user'];?>" disabled>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>

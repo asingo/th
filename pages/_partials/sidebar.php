@@ -22,9 +22,20 @@
   <link href="https://cdn.jsdelivr.net/gh/asingo/th/assets/css/custom.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  
+  <script>
+function target_popup(form) {
+    window.open('', 'formpopup', 'width=1268,height=1400,resizeable,scrollbars');
+    form.target = 'formpopup';
+}
+  </script>
 </head>
-
+<?php 
+if($_SESSION['rule']=='Billing'){
+  $hidden = 'hidden';
+}else{
+  $hidden = '';
+}
+?>
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -71,11 +82,12 @@
             <h6 class="collapse-header">Select Graph</h6>
             <a class="collapse-item" href="/graph/interface">Interface</a>
             <a class="collapse-item" href="/graph/client">Client/IP Address</a>
+            <a class="collapse-item" href="/graph/console" <?php echo $hidden;?>>Console</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="queue">
+        <a class="nav-link" href="/queue">
           <i class="fas fa-fw fa-chart-pie"></i>
           <span>Queue</span></a>
       </li>
@@ -96,38 +108,38 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Select Options</h6>
             <a class="collapse-item" href="/client/manage">Manage Client</a>
-            <a class="collapse-item" href="/client/drop">Drop Client</a>
+            <a class="collapse-item" href="/client/drop" <?php echo $hidden;?>>Drop Client</a>
             <a class="collapse-item" href="/client/billing">Billing Manage</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="report">
+        <a class="nav-link" href="/report">
           <i class="fas fa-fw fa-tasks"></i>
           <span>Report</span></a>
       </li>
-      <hr class="sidebar-divider">
+      <hr class="sidebar-divider" <?php echo $hidden;?>>
       <!-- Heading -->
-      <div class="sidebar-heading">
+      <div class="sidebar-heading" <?php echo $hidden;?>>
         Settings
       </div>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <li class="nav-item" <?php echo $hidden;?>>
         <a class="nav-link" href="/server">
           <i class="fas fa-fw fa-server"></i>
           <span>Server</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item" <?php echo $hidden;?>>
         <a class="nav-link" href="/users">
           <i class="fas fa-fw fa-user"></i>
           <span>Users</span></a>
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      <hr class="sidebar-divider d-none d-md-block" <?php echo $hidden;?>>
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
